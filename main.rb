@@ -1,5 +1,3 @@
-# print "Current Board"
-# print visualization of board
 
 def board_status(message, board_array)
 
@@ -42,11 +40,21 @@ end
 
 set_players
 
-puts "Player1(#{@p1marker}) which square do you want?"
-sqchoice = gets.to_i
+puts "Player1(#{@p1marker}) which square do you want? Pick 0 - 8"
+sqchoice1 = gets.to_i
+puts "Player1 has chosen #{sqchoice1}"
+current_board[sqchoice1] = "#{@p1marker}"
+board_status("Player1 (#{@p1marker}) chose space #{sqchoice1}", current_board)
 
-
-puts "Player1 has chosen #{sqchoice}"
-
-current_board[sqchoice] = "#{@p1marker}"
-board_status("Player1 (#{@p1marker}) chose space #{sqchoice}", current_board)
+puts "Player2(#{@p2marker}) Which square do you want? "
+sqchoice2= gets.to_i
+puts "Player 2 has chosen #{sqchoice2}"
+if current_board[sqchoice2] == "#{@p1marker}"
+then puts "Choose again"
+sqchoice2= gets.to_i
+current_board[sqchoice2] = "#{@p2marker}"
+board_status("Player 2 (#{@p2marker}) chose space #{sqchoice2}", current_board)
+elsif
+current_board[sqchoice2] = "#{@p2marker}"
+board_status("Player 2 (#{@p2marker}) chose space #{sqchoice2}", current_board)
+end
