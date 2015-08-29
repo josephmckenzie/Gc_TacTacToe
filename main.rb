@@ -1,22 +1,26 @@
 
-def board_status(message)
+def board(message, board_array)
 
 puts message
+   
+#board_positions_array[0] = "X"
+
 puts """
    |  |
-  1| 2| 3
+ #{board_array [0]} |#{board_array [1]} |#{board_array [2]} 
  __|__|__
    |  |
-  4| 5| 6
+ #{board_array [3]} |#{board_array [4]} |#{board_array [5]} 
  __|__|__
    |  |
-  7| 8| 9
+ #{board_array [6]} |#{board_array [7]} |#{board_array [8]}
    |  | """
    
-   end
-board_status("Welcome to TicTacToe")
-board_status("The Current board is:")
- 
+end
+board_positions_array = ["0","1","2","3","4","5","6","7","8"]
+   
+board("The Current board is:")
+board("board positions", board_positions_array)
  
  def set_player1_marker
 puts "Player 1 Choose X or O Please....."
@@ -31,8 +35,18 @@ if p1choice == "X"
  end
 
  def set_players_markers
-player1_marker =set_player1_marker
-player2_marker =set_player2_marker(player1_marker)
-puts "Player 1 is #{player1_marker} and Player 2 is #{player2_marker}."
+@player1_marker =set_player1_marker
+@player2_marker =set_player2_marker(@player1_marker)
+puts "Player 1 is #{@player1_marker} and Player 2 is #{@player2_marker}."
 end
 set_players_markers
+
+puts "Player 1 where would you like to move? Pick 1 - 9"
+sqchoice1= gets.to_i
+
+puts "Player1 has chosen #{sqchoice1}"
+
+puts "player2 Choose a square Between 1-9"
+gets.to_i
+
+
