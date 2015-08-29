@@ -18,9 +18,10 @@ puts """
    
 end
 board_positions_array = ["0","1","2","3","4","5","6","7","8"]
-   
-board("The Current board is:")
+ 
+empty= Array.new(9," ")
 board("board positions", board_positions_array)
+board("The Current board is", empty)
  
  def set_player1_marker
 puts "Player 1 Choose X or O Please....."
@@ -39,14 +40,16 @@ if p1choice == "X"
 @player2_marker =set_player2_marker(@player1_marker)
 puts "Player 1 is #{@player1_marker} and Player 2 is #{@player2_marker}."
 end
+
 set_players_markers
 
 puts "Player 1 where would you like to move? Pick 1 - 9"
-sqchoice1= gets.to_i
+sqchoice= gets.to_i
 
-puts "Player1 has chosen #{sqchoice1}"
+puts "Player1 has chosen #{sqchoice}"
 
 puts "player2 Choose a square Between 1-9"
 gets.to_i
+
 
 
