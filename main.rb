@@ -58,3 +58,18 @@ elsif
 current_board[sqchoice2] = "#{@p2marker}"
 board_status("Player 2 (#{@p2marker}) chose space #{sqchoice2}", current_board)
 end
+
+puts "Player1(#{@p1marker}) Which square do you want? "
+sqchoice3= gets.to_i
+puts "Player 2 has chosen #{sqchoice3}"
+if current_board[sqchoice3] == "#{@p2marker}"
+then puts "Choose again"
+sqchoice2= gets.to_i
+current_board[sqchoice3] = "#{@p1marker}"
+board_status("Player 2 (#{@p2marker}) chose space #{sqchoice3}", current_board)
+elsif
+current_board[sqchoice3] = "#{@p1marker}"
+board_status("Player 1 (#{@p1marker}) chose space #{sqchoice3}", current_board)
+end
+
+
