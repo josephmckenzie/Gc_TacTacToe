@@ -71,5 +71,3 @@ elsif
 current_board[sqchoice3] = "#{@p1marker}"
 board_status("Player 1 (#{@p1marker}) chose space #{sqchoice3}", current_board)
 end
-
-
